@@ -15,8 +15,11 @@ int solution(char str1[10],char str2[10])
     int dp[l1+1][l2+1];
     for(int i=0; i<=l1; i++)
     {
-        dp[0][i]=0;
         dp[i][0]=0;
+    }
+    for(int i=0; i<=l2; i++)
+    {
+        dp[0][i]=0;
     }
     for(int i=1;i<=l1;i++)
     {
@@ -38,7 +41,9 @@ int main()
 {
     char string1[10];
     char string2[10];
+    printf("Enter string 1:");
     scanf("%s",string1);
+    printf("Enter string 2:");
     scanf("%s",string2);
     int ans = solution(string1,string2);
     printf("Longest common subsequence is %d\n",ans);
