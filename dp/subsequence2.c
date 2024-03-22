@@ -1,7 +1,7 @@
 /* Longest common subsequence
-ex  s1-abcda
-    s2- bdaba
-    answer  = cda->3 */
+ex  s1-akdef
+    s2- kfgce
+    answer  = akfgcdef-> */
 #include<stdio.h>
 #include<math.h>
 #include<string.h>
@@ -15,11 +15,8 @@ int solution(char str1[10],char str2[10])
     int dp[l1+1][l2+1];
     for(int i=0; i<=l1; i++)
     {
-        dp[i][0]=0;
-    }
-    for(int i=0; i<=l2; i++)
-    {
-        dp[0][i]=0;
+        dp[0][i]=i;
+        dp[i][0]=i;
     }
     for(int i=1;i<=l1;i++)
     {
@@ -35,16 +32,13 @@ int solution(char str1[10],char str2[10])
             }
         }
     }
-    
     return dp[l1][l2];
 }
 int main()
 {
     char string1[10];
     char string2[10];
-    printf("Enter string 1:");
     scanf("%s",string1);
-    printf("Enter string 2:");
     scanf("%s",string2);
     int ans = solution(string1,string2);
     printf("Longest common subsequence is %d\n",ans);
