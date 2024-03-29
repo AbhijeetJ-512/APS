@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#define MAX_SIZE 1000
+#define MAX_SIZE 1001
 
 void read(int forest[][MAX_SIZE], int dp[][MAX_SIZE + 1], int n)
 {
