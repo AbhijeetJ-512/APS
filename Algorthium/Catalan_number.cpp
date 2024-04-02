@@ -14,8 +14,8 @@ unsigned long long catalan(int n)
         {
             catalan_nums[i] += catalan_nums[j] * catalan_nums[i - j - 1];
         }
+        cout << catalan_nums[i] << endl;
     }
-
     return catalan_nums[n];
 }
 
